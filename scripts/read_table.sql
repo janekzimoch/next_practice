@@ -1,0 +1,1 @@
+SELECT * FROM toy_table;
