@@ -1,6 +1,12 @@
-import { Database } from 'sqlite3';
+// const sqlite3 = require('sqlite3');
+import sqlite3 from "sqlite3";
 
-console.log(process.cwd())
-const db = new Database('sqlite.db');
+const db = new sqlite3.Database(
+  "./db/sqlite.db",
+  sqlite3.OPEN_READWRITE,
+  (err) => {
+    if (err) return console.error(err.message);
+  }
+);
 
 export default db;
