@@ -9,4 +9,26 @@ const db = new sqlite3.Database(
   }
 );
 
+export function addContactToDb(data: any) {
+  console.log([
+    data["first_name"],
+    data["last_name"],
+    data["pet"],
+    data["married"],
+  ]);
+  return new Promise((resolve, reject) => {
+    db.run(
+      "INSERT INTO toy_table (name, surname, pet, married) VALUES (?, ?, ?, ?);",
+      [data["first_name"], data["last_name"], data["pet"], data["married"]],
+      function (err) {
+        if (err) {
+          reject(err.message);
+        } else {
+          resolve("Query submitted succesfully.");
+        }
+      }
+    );
+  });
+}
+
 export default db;
