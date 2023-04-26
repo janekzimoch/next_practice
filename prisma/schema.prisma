@@ -13,6 +13,7 @@ model toy_table {
   surname String?
   pet     String?
   married Int
+  tags    Tag[]
 }
 
 model toy_table2 {
@@ -21,4 +22,11 @@ model toy_table2 {
   surname String?
   pet     String?
   married Bytes?
+}
+
+model Tag {
+  id          Int        @id @default(autoincrement())
+  email       String     @unique
+  toy_table   toy_table? @relation(fields: [toy_tableId], references: [id])
+  toy_tableId Int?
 }

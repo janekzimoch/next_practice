@@ -5,13 +5,13 @@ function SubmitContact() {
     const last_name = document.getElementById("last").value;
     const pet = document.getElementById("pet").value;
     const married = document.getElementById("married").checked ? 1 : 0;
-    const body = {'first_name': first_name,
-                  'last_name': last_name,
+    const body = {'name': first_name,
+                  'surname': last_name,
                   'pet': pet,
                   'married': married
                 }
     // console.log(body)
-    const response = await fetch("http://localhost:3002/api/contacts",
+    const response = await fetch("/api/contacts",
     {
       method: "POST",
       body: JSON.stringify(body),

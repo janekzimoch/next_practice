@@ -13,7 +13,7 @@ function ResponseDisplay() {
       setDisplayedText(TEXT_DISPLAY_DEFAULT)
     }
     else {
-      await fetch("http://localhost:3002/api/contacts", { method: "GET" }).then(async (res) => {
+      await fetch("/api/contacts", { method: "GET" }).then(async (res) => {
         const json_res = await res.json()
         setDisplayedText(json_res);
       }
