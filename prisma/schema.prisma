@@ -12,5 +12,13 @@ model toy_table {
   name    String?
   surname String?
   pet     String?
-  married Boolean
+  married Int
+}
+
+model toy_table2 {
+  id      Int     @id @default(autoincrement())
+  name    String?
+  surname String?
+  pet     String?
+  married Bytes?
 }

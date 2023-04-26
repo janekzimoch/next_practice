@@ -1,4 +1,4 @@
-CREATE TABLE toy_table2 (
+CREATE TABLE toy_table (
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
     surname VARCHAR(255),
